@@ -1,0 +1,5 @@
+$(eval $(call addlib,appmaria))
+
+APPMARIA_SRCS-y += $(APPMARIA_BASE)/address-space.c
+APPMARIA_CFLAGS-y += -fsanitize=shadow-call-stack -ffixed-x18 -fno-exceptions
+COMPFLAGS-y += -ffixed-x18 -fno-exceptions -D_SHADOW_STACK_
